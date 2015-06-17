@@ -1,0 +1,11 @@
+.zhezhao{background: url(../images/zz.png) repeat; width:100%; height:100%; position:fixed; top:0; left:0; right:0; bottom:0;}
+.delete{ width:275px; margin:15% auto 0 auto; background:#fff;}
+.line{ border-top:2px #fd9800 solid;}
+.del_content{ width:275px; padding-bottom:20px;}
+.del_content .img{ width:38px; margin:40px 0 10px 120px;}
+.del_content p{line-height:24px;font-size:14px; font-family:"Microsoft Yahei"; color:#333; text-align:center; margin:0 20px;}
+.del_input{ background:#f3f3f3; padding:10px 0;}
+.del_input .qd{background: url(../images/annv_07.png) no-repeat; width:76px; height:39px; border:0; float:left; margin:0 10px 0 60px; color:#fff;font-size:14px; font-family:"Microsoft Yahei";}
+.del_input .qx{background: url(../images/annv_09.png) no-repeat; width:76px; height:39px; border:0; color:#333;font-size:14px; font-family:"Microsoft Yahei";}
+.del_input .qd:hover{filter: alpha(opacity = 70);-moz-opacity: 0.8;-khtml-opacity: 0.8;opacity: 0.8; cursor:pointer;}
+.del_input .qx:hover{ color:#fd9800; cursor:pointer;}
