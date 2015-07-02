@@ -4,7 +4,7 @@
  * Author Link: http://blog.wangjunfeng.com
  */
 var nativeShare = function (elementNode, config) {
-    if (!document.getElementById(elementNode)) {
+    if (!!!document.getElementById(elementNode)) {
         return false;
     }
 
