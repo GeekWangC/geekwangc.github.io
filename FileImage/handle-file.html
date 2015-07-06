@@ -34,6 +34,7 @@
 			var selected_file = upload.files[0];
 
 			if(sUserAgent.match(/android/i) == "android"){
+				alert(1);
 		    	var img = new Image();
 			    img.src = window.URL.createObjectURL(selected_file);
 			    preview.innerHTML = '';
