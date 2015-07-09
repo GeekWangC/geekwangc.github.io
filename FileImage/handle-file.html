@@ -12,7 +12,7 @@
 		<li class="home"><a href="http://geekwangc.github.io">Home</a></li>
 	</ul>
 	<p>选择:</p>
-	<p><input type="file" accept="image/*" id="upload" name="upload" multiple="true"></p>
+	<p><input type="file" accept="image/*" id="upload" name="upload"></p>
 	<div><button id="surebtn">确定上传</button></div>
 	<p>图片预览：</p>
 	<p id="preview"></p>
@@ -34,6 +34,7 @@
 			var selected_file = upload.files[0];
 
 			if(sUserAgent.match(/android/i) == "android"){
+				alert(1);
 		    	var img = new Image();
 			    img.src = window.URL.createObjectURL(selected_file);
 			    preview.innerHTML = '';
@@ -45,6 +46,7 @@
 			    reader.readAsDataURL(selected_file);
 
 			}else{
+alert(2);
 				//判断文件类型是否为图片
 				 var imageType = /image.*/;
 	    
