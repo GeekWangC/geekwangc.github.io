@@ -1,0 +1,121 @@
+<!DOCTYPE html>  
+<html>  
+<head lang="en">  
+    <head>  
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">  
+        <title></title>  
+  
+    </head>  
+    <body>  
+    <h3>文本选择预览</h3>  
+        <input type="file" id="file" onchange="readAsText(this.files)"/>  
+        <div id="fileContent" style="background-color: #e3ceab;"></div>  
+        <script>  
+            function  readAsText(files)  
+            {  
+                if(files.length)  
+                {  
+                    var file = files[0];  
+                    var reader = new FileReader();  
+                    reader.onload = function(){  
+                        document.getElementById("fileContent").innerHTML = this.result;  
+                    };  
+                    reader.readAsText(file);  
+                }  
+            }  
+            function handleFiles(files){  
+                for (var i = 0; i < files.length; i++) {  
+                    var file = files[i];  
+                    var imageType = /image.*/;  
+  
+                    if (!file.type.match(imageType)) {  
+                        continue;  
+                    }  
+  
+                    var img = document.createElement("img");  
+                    img.classList.add("obj");  
+                    img.file = file;  
+                    preview.appendChild(img);  
+  
+                    var reader = new FileReader();  
+                    reader.onload = (function(aImg){  
+                        return function(e){  
+                            aImg.src = e.target.result;  
+                        };  
+                    })(img);  
+                    reader.readAsDataURL(file);  
+                }  
+            }  
+        </script>  
+        <hr/>  
+        <h3>文本拖拽预览</h3>  
+        <div id="dropbox" style="width: 100%;min-height: 200px;background-color: #b2dba1;">  
+            <p>Drop Here</p>  
+            <div id="fileContent2" style="background-color: #a8ff60;"></div>  
+            <script>  
+                var dropbox = document.getElementById("dropbox");  
+                dropbox.addEventListener("dragenter", dragenter, false);  
+                dropbox.addEventListener("dragover", dragover, false);  
+                dropbox.addEventListener("drop", drop, false);  
+  
+                function dragenter(e) {  
+                    e.stopPropagation();  
+                    e.preventDefault();  
+                }  
+  
+                function dragover(e) {  
+                    e.stopPropagation();  
+                    e.preventDefault();  
+                }  
+  
+                function drop(e) {  
+                    e.stopPropagation();  
+                    e.preventDefault();  
+                    var dt = e.dataTransfer;  
+                    var files = dt.files;  
+                    if(files.length){  
+                        var file = files[0];  
+                        var reader = new FileReader();  
+                        reader.onload = function()  
+                        {  
+                            document.getElementById("fileContent2").innerHTML = this.result;  
+                        };  
+                        reader.readAsText(file);  
+                    }  
+                }  
+  
+            </script>  
+        </div>  
+        <hr/>  
+        <h3>图片预览</h3>  
+        <input type="file" multiple onchange="handleFiles(this.files)"/>  
+        <div id="preview"></div>  
+        <script>  
+            var preview = document.querySelector("#preview");  
+            function handleFiles(files){  
+                console.info(files);  
+                for (var i = 0; i < files.length; i++) {  
+                    var file = files[i];  
+                    var imageType = /image.*/;  
+  
+                    if (!file.type.match(imageType)) {  
+                        continue;  
+                    }  
+  
+                    var img = document.createElement("img");  
+                    img.classList.add("obj");  
+                    img.file = file;  
+                    preview.appendChild(img);  
+  
+                    var reader = new FileReader();  
+                    reader.onload = (function(aImg){  
+                        return function(e){  
+                            aImg.src = e.target.result;  
+                        };  
+                    })(img);  
+                    reader.readAsDataURL(file);  
+                }  
+            }  
+        </script>  
+    </body>  
+</html>  
