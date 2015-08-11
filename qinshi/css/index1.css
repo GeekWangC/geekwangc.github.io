@@ -1,0 +1,17 @@
+body {
+	background: url(../image/1063240ec6ad2f19f0a8288d0d19a86a.jpg); 
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:cover;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+}
+.s1{
+background-color:#666666;
+color:#FFFFFF;
+}
+h1
+{
+	text-align:center;
+	text-shadow:6px 3px 4px #333;
+}

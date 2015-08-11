@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="css/问卷调查.css" rel="stylesheet" type="text/css" />
+<style>
+		body {
+			background: url(image/24b4ab19f7b97f770f006c6d6ae71f3a.jpg); 
+			background-attachment:fixed;
+			background-repeat:no-repeat;
+			background-size:cover;
+			-moz-background-size:cover;
+			-webkit-background-size:cover;
+		}
+	</style>
+<title>问卷调查</title>
+</head>
+<body background="image/24b4ab19f7b97f770f006c6d6ae71f3a.jpg">
+<h1>秦迷问卷小调查</h1>
+<form>
+<fieldset>
+<legend>个人信息</legend>
+您的年龄:
+<input type="number" name="intputNum1" min="1" max="120" step="1" placeholder="填写年龄" />岁</br></br>
+性&nbsp&nbsp&nbsp&nbsp别:
+<input type="radio" name="radiogroup0" value="男" />男
+<input type="radio" name="radiogroup0" value="女" />女</br></br>
+每周看动漫时间:
+<input type="range" name="inputNum2" min="0" max="100" step="2" />小时</br>
+</fieldset>
+<fieldset>
+<legend>其他信息</legend>
+1.您何时关注的秦时明月？</br>
+<input type="radio" name="radiogroup1" value="2007-2009" />2007-2009年</br>
+<input type="radio" name="radiogroup1" value="2010-2012" />2010-2012年</br>
+<input type="radio" name="radiogroup1" value="2013-2015" />2013-2015年</br>
+2.每次更新，您会第一时间观看吗？</br>
+<input type="radio" name="radiogroup2" value="总是" />总是</br>
+<input type="radio" name="radiogroup2" value="经常" />经常</br>
+<input type="radio" name="radiogroup2" value="有时" />有时</br>
+<input type="radio" name="radiogroup2" value="从不" />从不</br>
+3.您最喜欢的秦时明月人物是？(多选)</br>
+<input type="checkbox" name="checkgroup" value="少司命" />少司命</br>
+<input type="checkbox" name="checkgroup" value="赤练" />赤练</br>
+<input type="checkbox" name="checkgroup" value="张良" />张良</br>
+<input type="checkbox" name="checkgroup" value="月儿" />月儿</br>
+<input type="checkbox" name="checkgroup" value="星魂" />星魂</br>
+<input type="checkbox" name="checkgroup" value="湘夫人" />湘夫人</br>
+<input type="checkbox" name="checkgroup" value="其他" />其他</br>
+4.您对秦时明月的建议:</br>
+<textarea rows="2" cols="60" name="txtarea" placeholder="请输入您对秦时明月的建议,限120字以内"></textarea>
+</fieldset>
+<fieldset>
+<input type="submit" value="提交" />&nbsp&nbsp&nbsp&nbsp
+<input type="reset" value="重置" />
+</fieldset>
+</form>
+</body>
+</html>
