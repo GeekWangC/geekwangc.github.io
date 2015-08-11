@@ -1,0 +1,70 @@
+/* CSS Document */
+body{font-family:"Microsoft Yahei"; font-size:62.5%;background:#ebeef3; color:#333;}
+.bg{ background:#ebeef3; }
+img{ width:100%; height:auto;}
+header,
+nav,
+article,
+footer{margin:0 auto; max-width:680px; min-width:320px;}
+/*upload*/
+
+.header{ width:100%; height:50px; background:#2b303d; text-align:center; position:relative;}
+.header img{ height:36px; width:114px; text-align:center; margin-top:7px;}
+.nav{ width:100%; height:50px; background:#2e9fe6; text-align:center; position:relative;}
+.nav .navcent{ position: absolute; width:94%; height:36px; line-height:36px; top:6px; left:3%;}
+.nav .navcent span{ float:right; height:36px; padding-top:4px;}
+.nav .navcent span a{ display:block; height:28px; padding:0 18px; line-height:30px; background:#157aba; border-radius:4px; border-bottom:2px solid #19567c; color:#fff; font-size:1.4em;}
+.nav .navcent .return{ float:left; width:4.4%; padding-right:2px; min-width:26px;}
+.nav .navcent h3{ float:left; color:#fff; font-size:1.6em; font-weight:normal;}
+
+.art{ width:97%; height:auto; padding-left:3%;}
+.art ul{ width:100%; padding-top:16px;}
+.art li{ float:left; position:relative; width:30%; margin-right:3%; margin-bottom:16px;}
+.art li a{ display:block; position:absolute; left:0; top:0; width:100%; height:auto; z-index:2;}
+.art li .pht{ width:100%; height:100%; border-radius:4px; position:relative; z-index:3;}
+.upload{ width:96%; margin:0 auto; font-size:1.6em; text-align:center;}
+.upload img{ width:3%; position:relative; margin-right:6px; top:3px; max-width:14px;}
+
+@media screen and (device-width: 320px) and (device-height: 568px)  {
+.art{padding-left:2%;}
+}
+@media screen and (device-width: 320px) and (device-height: 480px)  {
+.art{padding-left:2%;}
+.upload img{ top:1px;}
+}
+@media screen and (device-width: 320px) and (device-height: 568px)  {
+.upload img{ top:2px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

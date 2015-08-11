@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pc和手机端的图片上传处理</title>
+	<meta charset="utf-8" />
+	<meta name="author" content="geekwangc">
+	<meta name="viewport" content="width=device-width" />
+	<link rel="shortcut icon" style="image/x-icon" href="wangchao.ico"/>
+	<style>
+	.upload-img-div {position:relative;overflow:hidden;}
+    .inputstyle {float:left;width:380px;height:35px;border:1px solid #999;font-size:1.3em;}
+    .file1 {float:left;width:80px;height:37px;line-height:37px;background:#81bb3b;color:#fff;font-size:14px;text-align:center;margin-left:10px;border-radius:5px;}
+    .photo-ip {position:absolute;top:0;left:0;width:472px;height:39px !important;opacity:0;cursor:pointer;}
+    .brand-submit {width:200px;height:30px;cursor:pointer;margin-top:20px;background:none;border:1px solid #fc6605;background:#fc6605;color:#fff;border-radius:5px;}</style>
+</head>
+<body>
+	<h2>原来的图像</h2>
+    <img src="http://m3.img.srcdd.com/farm5/d/2015/0214/22/5127B4C55CEF418542B229E79B71C4D6_B500_900_169_56.jpeg" id="img"/>
+    <h2>使用canvas生成的图像</h2>
+    <div id="imageToCanvas"></div>
+    
+    <h2>把canvas转变为image图像</h2>
+    <div id="canvasToImage"></div>
+
+    
+    <h2>上传图片进行压缩功能</h2>
+    <div class="upload-img-div">
+        <input type="text" class="inputstyle" id="inputstyle" name="photo1"/>
+        <label class="file1" id="upload-img">上传图片</label>
+        <input type="file" id="photo" name="photo" class="photo-ip">
+    </div>
+    <input class="submit-bt brand-submit" type="button" id="Submit_Button" value="提  交">
+    <img src="" id="test" style="display:none;"/>
+	
+</body>
+<script type="text/javascript">
+window.onload = function() {
+            // 把image 转换为 canvas (画布)
+            function imageToCanvas(image) {
+            
+                var canvas = document.createElement("canvas");
+                canvas.width = image.width;
+                canvas.height = image.height;
+                canvas.getContext("2d").drawImage(image,0,0);
+                return canvas;
+            }
+            var image = document.getElementById("img");
+            var canvas = imageToCanvas(image);
+            document.getElementById("imageToCanvas").appendChild(canvas);
+        
+            // 转换canvas为image 假设图片已经在canvas上生成好了，那么可以使用如下方法，把canvas转变为image图像
+            function canvasToImage(canvas) {
+                var img = new Image();
+                // canvas.toDataURL 返回的是一串Base64编码的URL
+                console.log(canvas)
+                // 指定格式 PNG 
+                var newImageData = canvas.toDataURL('');
+
+                // 打印出64位编码
+                console.log(newImageData);
+                img.src = newImageData;
+                return img;
+            }
+            document.getElementById("canvasToImage").appendChild(canvasToImage(canvas));
+
+            
+            //  上传图片 
+            $("#photo").change(function(){
+                alert(1)
+                var value = $.trim($(this).val());
+                if(value == "") {
+                    return;
+                }
+                $("#inputstyle").val(value);
+                
+            });
+            
+            /**
+             * 压缩图片
+             * @param {Image} source_img_obj 图片对象
+             * @param {Integer} quality 图片质量
+             * @return {Image} output_format 输出图片格式
+             */
+            function compress(source_img_obj, quality, output_format) {
+                var mime_type = "image/jpeg";
+                if(output_format!=undefined && output_format=="png"){
+                    mime_type = "image/png";
+                }
+                var cvs = document.createElement('canvas');
+                cvs.width = source_img_obj.width;
+                cvs.height = source_img_obj.height;
+                var ctx = cvs.getContext("2d").drawImage(source_img_obj, 0, 0);
+
+                var newImageData = cvs.toDataURL(mime_type, quality/100);
+
+                var result_image_obj = new Image();
+                result_image_obj.src = newImageData;
+                return {
+                    "result_image_obj": result_image_obj,
+                    "newImageData": newImageData
+                };
+            }
+            $("#Submit_Button").click(function(){
+                var file = document.getElementById("photo").files[0];
+                var fileExt = $("#inputstyle").val();
+                if(fileExt == "") {
+                    alert("必须选择一个文件");
+                    return;
+                }
+                var reader = new FileReader();
+                // 将文件以二进制的形式进行读入页面
+                reader.readAsDataURL(file);
+                reader.onload = function() {
+                    var i = document.getElementById("test");
+                    i.src = this.result;
+                    var quality = 70;
+                    var obj = compress(i,quality);
+                    i.src = obj.result_image_obj.src;
+                    var data = obj.newImageData;
+                    console.log(data);
+                    // post请求 可以把data数据传过去
+                }
+            });
+            
+        }
+
+</script>
+</html>
