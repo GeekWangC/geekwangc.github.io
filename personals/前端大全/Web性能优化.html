@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset ="utf-8" />
+	<meta name ="author" content ="geekwangc" />
+	<link rel ="shortcut icon" type ="image/icon" href ="icon/g.ico"/>
+	<link rel ="stylesheet" type ="text/css" href ="style.css"/>
+	<title>WEB性能优化</title>
+</head>
+<body>
+	<header id="header" class="">
+		<h1>Web性能优化系列：Web性能优化分析</h1>
+	</header><!-- /header -->
+	<section>
+		<p>如果你的网站在1000ms内加载完成，那么会有平均一个用户停留下来。2014年，平均网页的大小是1.9MB。网站的核心内容需要在1000ms内呈现出来。如果失败了，用户将永远不会再访问你的网站。通过降低页面加载的时间，很多著名公司的收入和下载量有显著的提升。比如:</p>
+		<ul>
+			<li>Walmart 每降低100ms的加载时间, 他们的收入就提高1%.</li>
+			<li>Yahoo 每降低400ms的加载时间，他们的访问量就提升9%。</li>
+			<li>Mozilla 将他们的页面速度提升了2.2秒，每年多获得了1.6亿firefox的下载量。</li>
+		</ul>
+	</section>
+	<section>
+		<p>网站优化的步骤</p>
+		<ol>
+			<li>设定性能预算。</li>
+			<li>测试当前的性能。</li>
+			<li>找出导致性能问题的地方。</li>
+			<li>最后，duang，使用优化特技。</li>
+		</ol>
+	</section>
+	<p>下面有几种方法可以提升你的页面性能，让我们来看看</p>
+	<section>
+		<h4>速度指标</h4>
+		<p>速度指标是指页面的可视部分被呈现在浏览器中的平均速度。表示为毫秒的形式，并且取决于viewport的大小。请看下图（用视频帧的形式展现页面加载时间，以秒为单位）。</p>
+		<p>速度指标越低越好。</p>
+		<img alt ="速度指标" src ="image/0.webp" />
+		<p>速度指标可以通过Webpagetest 来测试（由Google维护）</p>
+		<p>长话短说</p>
+		<p>Webpage test 有很多特性，比如在不同的地方用不同的浏览器跑多个测试。还可以测算其他的数据比如加载时间，dom元素的数量，首字节时间等等…</p>
+	</section>
+	<section>
+		<h4>渲染阻塞</h4>
+		<p>如果你知道浏览器如何运行，那么你应该知道HTML, CSS, JS是怎么被浏览器解析的以及其中哪个阻塞了页面的渲染。如果你不知道，请看下图。</p>
+		<img alt ="渲染阻塞" src ="image/1.webp">
+		<p>浏览器渲染的步骤</p>
+			<ol>
+				<li>首先浏览器解析HTML标记去构造DOM树（DOM = Document Object Model 文档对象模型）</li>
+				<li>然后解析CSS去构造CSSOM树( CSSOM = CSS Object Model CSS对象模型)</li>
+				<li>在将DOM和CSSOM树结合成渲染树之前，JS文件被解析和执行。</li>
+			</ol>
+		<p>现在你知道浏览器如何进行解析了，让我们看看是哪一部分阻塞了渲染树的生成。</p>
+			<ol>
+				<li>
+					<h5>阻塞渲染的CSS</h5>
+					<p>有人认为CSS阻塞了渲染。在构造CSSOM时，所有的CSS都会被下载，无论它们是否在当前页面中被使用。</p>
+					<p>为了解决这个渲染阻塞，跟着下面的两个步骤做</p>
+					<p>将关键CSS内嵌入页面中，即将最重要的（首次加载时可见的部分页面所使用到的）style写入head中的"style"里。移除没用到的CSS。那么我是如何找出没用到的CSS的呢。</p>
+					<ol>
+						<li>使用PagespeedInsight去得到像未使用的CSS，阻塞渲染的CSS和JS文件等等的统计数据。例如：Flipkart的Pagespeed Insight统计结果</li>
+						<li>使用Gulp任务，如gulp-uncss或是使用Grunt 任务，如grunt-uncss。如果你不知道他们是什么，请阅读我之前的文章。</li>
+					</ol>
+					<p>##专业小贴士</p>
+					<ol>
+						<li>使用CSS Stats保证页面中完全没有未被用到的元素，唯一的样式和字体等等</li>
+						<li>Pagespeed Insight Chrome 插件.</li>
+						<li>Tag Counter Chrome 插件.</li>
+					</ol>
+				</li>
+				<li>
+					<h5>渲染阻塞的JavaScript</h5>
+					<p>如果在解析HTML标记时，浏览器遇到了JavaScript，解析会停止。只有在该脚本执行完毕后，HTML渲染才会继续进行。所以这阻塞了页面的渲染。</p>
+					<p>为了解决它</p>
+					<p>在<script></script>标签中使用 async或defer特性。</p>
+					<ol>
+						<li><em>async</em>将会在HTML解析时下载该文件并在下载完成后马上执行。</li>
+						<li><em>defer</em> 将会在HTML解析式下载该文件并在HTML解析完成后执行。</li>
+					</ol>
+				</li>
+			</ol>
+	</section>
+	<section>
+		<h4>内存泄漏</h4>
+		<p>内存泄漏和页面臃肿 是前端开发者所要面对的问题之一。让我们来看看如何发现并解决内存泄漏。</p>	
+		<p>在JavaScript中寻找内存泄漏</p>	
+		<p>使用Chrome Task Manager（任务管理器）去检测app所使用的内存以及js内存（总体内存+实时内存）。如果你的内存一直随着你的每次操作而提高，那么你可以怀疑有内存泄漏了。</p>	
+		<p>下面是Chrome Task Manager的截图。</p>
+		<img alt ="内存泄漏" src ="image/2.webp">	
+		<p>Chrome DevTools分析</p>
+		<p>使用 Heap Profiler 去查看内存泄漏。打开Chrome devTools 然后点击profiles 标签，接着选中 take heap snapshot。</p>	
+		<img alt ="内存泄漏" src ="image/3.webp">
+		<p>Heap Profiler有四个快照视图(snapshot view)</p>
+		<ol>
+			<li>Summary 视图 – 展示对象的总体数量以及它们的实例总数，浅部（Shallow）大小（对象本身的内存大小）以及保留（Retained）大小（自动GC发生后所释放的内存大小+无法执行到的对象的内存大小）。</li>
+			<li>Comparison 视图- 用于比较一个操作的前后的两个或多个快照，可以检测内存泄漏。</li>
+			<li>Containment 视图- 展示了你的app对象架构的整体视图 + DOMWindow 对象(全局对象下的), GC 根部, 本地对象 (来自浏览器)。</li>
+			<li>Dominators 视图- 展示了 dominators 树的堆图。</li>
+		</ol>	
+		<p>DOM泄漏</p>	
+		<p>对DOM元素的引用会导致DOM泄漏并且阻碍自动垃圾回收（GC）的进行。</p>	
+		<p>来看一个例子</p>
+		<pre>
+&lt;div&gt;
+	&lt;div id="container"&gt;
+	    &lt;h1 id="heading"&gt;I am just a heading nothing much &lt;/h1&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+var parentEle = document.getElementById('container'); //get parent ele reference 得到父元素的引用
+var headingEle = document.getElementById('heading'); //get child ele reference 得到子元素的引用
+parentEle.remove(); //removes parent element from DOM 从DOM中移除父元素
+//but its child ref still exist, So parentEle won't collect GC'd and causes DOM Leak
+//但是它的子元素引用仍然存在，所以parentEle不会被GC回收，因此导致了DOM泄漏。将它的引用设置为null即可修复DOM泄漏。
+headingEle = null; //Now parentEle will be GC'd
+		</pre>
+	</section>
+</body>
+</html>

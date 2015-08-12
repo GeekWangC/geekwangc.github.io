@@ -1,0 +1,348 @@
+@charset "utf-8";
+
+#box {
+	border-bottom:1px dashed #e8dfda;
+	padding:0 0 30px;
+	position:relative;
+}
+
+#box.signature {
+	font-size:20px;
+	font-weight:bold;
+	color:#7c7c7c;
+	text-align:center;
+}
+#box.signature p {line-height:31px;}
+
+
+/*----   标题   ----*/
+#title-index {
+	height:50px;
+	margin:30px 0;
+	position:relative;
+	clear:both;
+}
+#title-index span {
+	display:block;
+	float:left;
+	width:10px;
+	height:57px;
+	overflow:hidden;
+	position:relative;
+	margin-left:-10px;
+}
+#title-index a {color:#dad9d4;}
+#title-index h3 {
+	width:290px;
+	height:50px;
+	font-size:18px;
+	line-height:50px;
+	padding-left:30px;
+	position:relative;
+	display:inline-block;
+}
+@media screen and (max-width: 1400px) {
+#title-index span {display:none;}
+}
+
+
+/*----   小白故事   ----*/
+#box #wrap {
+	height:100%;
+	overflow:hidden;
+	padding:0 25px 0 30px;
+	overflow:hidden;
+}
+#box #wrap ul,#box #wrap ul li {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#box #wrap ul.common-scroller-controls {position:absolute;top:10px;right:30px;height:24px;list-style:none;}
+#box #wrap ul.common-scroller-controls li {padding:9px 5px;float:left;}
+#box #wrap ul.common-scroller-controls li:after {content: "\020";display:block;width:12px;height:12px;background-color:#d1d1d1;}
+#box #wrap ul.common-scroller-controls li:hover {cursor:pointer;}
+#box #wrap .scroller {overflow:hidden;}
+#box #wrap .scroller .column-grid {width:9999em;}
+
+/*----   小白故事   ----*/
+#box #wrap #story {
+	width:282px;
+	height:100%;
+	overflow:hidden;
+	float:left;
+	padding-right:30px;
+	position:relative;
+}
+#box #wrap #story .photo {
+	clear:both;
+	width:100%;
+	height:auto;
+}
+#box #wrap #story .photo img {
+	width:274px;
+	height:140px;
+	border:4px solid #e7e7e7;
+}
+#box #wrap #story h3 {
+	font-size:16px;
+	font-weight:bold;
+	line-height:30px;
+	display:block;
+	width:100%;
+	height:30px;
+	overflow:hidden;
+	margin-top:12px;
+	position:relative;
+}
+#box #wrap #story span {
+	font-family:Georgia,serif;
+	font-weight: normal;
+	font-style:italic;
+	font-size:13px;
+	color: #969696;
+	line-height:23px;
+}
+#box #wrap #story .content {
+	font-family:"Helvetica Neue","Arial","sans-serif";
+	color:#000;
+	margin-top:15px;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	line-height:22px;
+	font-size:13px;
+	position:relative;
+}
+#box #wrap #story .more {
+	position:relative;
+	font-family:"Helvetica Neue","Arial","sans-serif";
+	font-weight:300;
+	font-size:14px;
+	display:inline-block;
+	margin-top:12px;
+}
+
+
+/*----   工作   ----*/
+#box #wrap #work {
+	width:220px;
+	height:291px;
+	overflow:hidden;
+	float:left;
+	padding-right:30px;
+	position:relative;
+}
+#box #wrap #work .work-img {
+	float:left;
+	width:212px;
+	height:283px;
+	overflow:hidden;
+	border:4px #e7e7e7 solid;
+	position:absolute;
+	z-index:20;
+}
+#box #wrap #work .work-img:hover {
+	z-index:12;
+}
+#box #wrap #work .work-img img {
+	width:212px;
+	height:auto;
+	position:relative;
+}
+#box #wrap #work .work-title {
+	position:absolute;
+	background:#000;
+	background:rgba(0,0,0,0.7);
+	*background:#000;
+	background:#000\0;
+	filter:alpha(Opacity=30);
+	width:212px;
+	height:50px;
+	overflow:hidden;
+	bottom:14px;
+	left:4px;
+	z-index:18;
+}
+#box #wrap #work .work-title h2 {
+	font-size:16px;
+	color:#e2e2e2;
+	line-height:30px;
+	padding-left:10px;
+}
+#box #wrap #work .work-title p{
+	font-size:13px;
+	color:#969696;
+	line-height:15px;
+	padding-left:10px;
+}
+
+
+/*----   文章   ----*/
+#box #article {
+	height:100%;
+	padding:0 30px;
+	overflow:hidden;
+	position:relative;
+}
+#box #article .article {
+	width:373px;
+	height:100%;
+	overflow:hidden;
+	float:left;
+	padding-right:50px;
+	position:relative;
+}
+#box #article .article .title-1 {
+	width:373px;
+	height:60px;
+	overflow:hidden;
+	padding:17px 0;
+	position:relative;
+}
+#box #article .article .title-1 a {
+	display:block;
+	width:60px;
+	height:60px;
+	overflow:hidden;
+	border:4px solid;
+	border-radius:50%;
+	text-align:center;
+	line-height:60px;
+	font-size:30px;
+	text-decoration:none;
+	margin:0 auto;
+}
+
+#box #article .article .title-1 a span{
+	display:block;
+	width:60px;
+	height:60px;
+}
+#box #article .article .title-1 a:hover span{
+	display:none;
+}
+
+#box #article .article ul {
+	margin:22px 0 0;
+	padding:0;
+	list-style:none;
+	position:relative;
+}
+#box #article .article ul li {
+	margin:0;
+	padding:0;
+	list-style:none;
+	display:block;
+	width:100%;
+	height:32px;
+	overflow:hidden;
+	line-height:32px;
+	position:relative;
+}
+#box #article .article ul li .text {
+	width:74%;
+	overflow:hidden;
+	float:left;
+	background:url(../images/li.png) no-repeat 0 10px;
+	padding-left:6%;
+	font-size:14px;
+}
+#box #article .article ul li .time {
+	width:20%;
+	overflow:hidden;
+	float:left;
+	font-family:Georgia,serif;
+	font-style:italic;
+	font-size:12px;
+	color: #969696;
+	text-align:right;
+}
+
+/*----   记忆   ----*/
+#box #memory {
+	height:517px;
+	padding:0 30px;
+	overflow:hidden;
+	position:relative;
+}
+#box #memory .memory-left {
+	float:left;
+	width:300px;
+	height:100%;
+	overflow:hidden;
+	position:relative;
+}
+#box #memory .memory-right {
+	float:left;
+	width:915px;
+	height:100%;
+	overflow:hidden;
+	position:relative;
+}
+#box #memory .memory-right a {
+	display:block;
+	float:left;
+	width:300px;
+	height:169px;
+	overflow:hidden;
+	margin:0 0 5px 5px;
+}
+#box #memory .memory-right a:hover {
+	width:292px;
+	height:161px;
+	border:4px solid;
+}
+#box #memory .memory-right a img {
+	width:300px;
+	height:auto;
+}
+#box #memory .memory-right a:hover img {
+	margin:-4px 0 0 -4px;
+}
+
+#box #memory .memory-right .memory-img {
+	width:300px;
+	height:343px;
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	left:310px;
+	z-index:30;
+}
+
+
+/*----   关于   ----*/
+#about-index {
+	height:100%;
+	position:relative;
+}
+#about-index #about {
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	position:relative;
+}
+#about-index #about .about-index {
+	width:595px;
+	height:auto;
+	overflow:hidden;
+	float:left;
+	padding:0 0 30px 30px;
+}
+#about-index #about .about-index p {
+	font-family:"Georgia","serif";
+	font-weight: normal;
+	font-style:italic;
+	font-size:15px;
+	color:#7c7c7c;
+	line-height:1.8em;
+	margin-bottom:20px;
+}
+#about-index #about .about-index span.detail {
+	font-family:"Helvetica Neue","Arial","sans-serif";
+	font-weight: normal;
+	font-size:15px;
+	color:#eb5426;
+	line-height:1.8em;
+}

@@ -1,0 +1,125 @@
+@charset "gb2312";
+
+/*----   背景导航   ----*/
+#menu ul a.home:hover {background:url(../images/home-1.png) no-repeat top right;}
+
+/*----   返回顶部   ----*/
+#moquu_wxin a,#moquu_wshare a,#moquu_wmaps a,#moquu_top,#moquu_bottom {background:url(../images/sbtn-orange.png);}
+#moquu_wxin a:hover,#moquu_wshare a:hover,#moquu_wmaps a:hover,#moquu_top:hover,#moquu_bottom:hover {background:url(../images/sbtn-orange.png);}
+
+/*----   顶部   ----*/
+#moquu_top {background-position:0 -0px;}
+#moquu_top:hover {background-position:-50px -0px}
+
+/*----   微信   ----*/
+#moquu_wxin a {background-position:0 -50px;}
+#moquu_wxin a:hover {background-position:-50px -50px;}
+
+/*----   手机   ----*/
+#moquu_wshare a {background-position:0 -100px;}
+#moquu_wshare a:hover {background-position:-50px -100px;}
+
+/*----   留言   ----*/
+#moquu_wmaps a {background-position:0 -150px;}
+#moquu_wmaps a:hover {background-position:-50px -150px;}
+
+/*----   底部   ----*/
+#moquu_bottom {background-position:0 -200px;}
+#moquu_bottom:hover {background-position:-50px -200px;}
+
+
+/*----   logo   ----*/
+#top #logo {background-color:#ea7716;}
+
+
+a:hover {color:#eb5426;}
+
+/*----   头部底部线条   ----*/
+#top,#bottom {border-color:#ea7716;}
+
+/*----   首页幻灯片   ----*/
+
+
+/*----   菜单   ----*/
+#menu ul li .two a,#menu ul li .one a.click {color:#ea7716;}
+#menu ul li .two input {color:#ea7716;}
+
+/*----   导航   ----*/
+#title-index span {background:url(../images/title-left-right-1.png) no-repeat left top;}
+#title-index h3 {background:url(../images/menu-bg-1.jpg) repeat-x;}
+#title-index a:hover {color:#ea7716;}
+
+/*----   首页图片碰上线条颜色   ----*/
+#box #wrap #story .photo img:hover {border-color:#ea7716;}
+#box #wrap #work .work-img:hover {border-color:#ea7716;}
+#box #memory .memory-right a:hover img {border-color:#ea7716;}
+
+/*----   首页切换图按钮   ----*/
+#box #wrap ul.common-scroller-controls li.active:after {background-color:#ea7716;}
+
+/*----   首页更多按钮   ----*/
+#box #wrap #story .more a,#about-index #about .about-index span.detail a {color:#ea7716;}
+#box #wrap #story .more a:hover,#about-index #about .about-index span.detail a:hover {text-decoration:underline;}
+
+/*----   首页记忆   ----*/
+#box #memory .memory-left,#box #memory .memory-right .memory-img {background-color:#ea7716;}
+
+
+/*----   新闻图标   ----*/
+#box #article .article .title-1 a {border-color:#ea7716;color:#ea7716;}
+
+
+/*----   底部   ----*/
+#bottom .bottom h3 {color:#ea7716;}
+#bottom .bottom a:hover {color:#ea7716;}
+#bottom .bottom .link ul li:hover {background-color:#ea7716;border-radius:5px;}
+#bottom .bottom .copyright .socialicon-1 a:hover {border-color:#ea7716;}
+#bottom .bottom .copyright .socialicon-1 a:hover {background-color:#ea7716;}
+
+
+/*----   内页   ----*/
+
+#title-inside .title-inside h3 {color:#ea7716;}
+#message #right .title-2 h3 {color:#ea7716;}
+#message #right #publish .icon-1:hover {border-color:#ea7716;box-shadow: 0 0 5px rgba(233,119,22,0.20);}
+#message #right #publish textarea:hover {border-color:#ea7716;box-shadow: 0 0 5px rgba(233,119,22,0.20);}
+#message #right #publish .submit:hover {color:#fff;border-color:#ea7716;background:#ea7716;}
+#links #left ul li {background:#ea7716;}
+#links #right .title-3 h3 {color:#ea7716;}
+#links #right #application .icon-2:hover {border-color:#ea7716;box-shadow: 0 0 5px rgba(233,119,22,0.20);}
+#links #right #application .submit:hover {color:#fff;border-color:#ea7716;background:#ea7716;}
+#articles #left .articlesview .articles-3 span a:hover {color:#ea7716;}
+#articles #left .articlesview .articles-content p span {color:#ea7716;}
+#articles #left .title-3,#articles #left .title-4 {color:#ea7716;}
+#articles #left #publishcomments .icon-3:hover {border-color:#ea7716;box-shadow: 0 0 5px rgba(233,119,22,0.20);}
+#articles #left #publishcomments textarea:hover {border-color:#ea7716;box-shadow: 0 0 5px rgba(233,119,22,0.20);}
+#articles #left #publishcomments .submit:hover {color:#fff;border-color:#ea7716;background:#ea7716;}
+#photo-comments .title-6 h3 {color:#ea7716;}
+#photo-comments #right #publish .icon-1:hover {border-color:#ea7716;box-shadow: 0 0 5px rgba(233,119,22,0.20);}
+#photo-comments #right #publish textarea:hover {border-color:#ea7716;box-shadow: 0 0 5px rgba(233,119,22,0.20);}
+#photo-comments #right #publish .submit:hover {color:#fff;border-color:#ea7716;background:#ea7716;}
+#xiaobai #aboutme .about-photo img:hover {border-color:#ea7716;}
+#xiaobai #aboutwebsite .title-7 h3 {color:#ea7716;}
+
+#page-1 span input.wenbenkuang:hover {border-color:#ea7716;}
+#page-1 span input.page {background-color:#ea7716;}
+#page-2 span input.wenbenkuang:hover {border-color:#ea7716;}
+#page-2 span input.page {background-color:#ea7716;}
+#page-2 span a {background-color:#ea7716;color:#fff;}
+
+
+/*----   图片   ----*/
+#filter-container figure .classification-2 h3 {color:#ea7716;}
+#filter-container figure .classification-2 ul li a:hover {background-color:#ea7716;}
+#filter-container figure .information a {color:#ea7716;}
+#page-1 a:hover {color:#ea7716;}
+
+
+/*----   文章   ----*/
+#articles #left .articles .articles-2 a {color:#ea7716;}
+
+#articles #right #search .button {background:#ea7716;}
+#articles #right ul.photo li a:hover {border-color:#ea7716;}
+
+#articles #right #title-1 {background:url(../images/menu-bg-1.jpg) repeat-x;}
+#articles #right #title-1 span {background:url(../images/title-left-right-1.png) no-repeat right top;}

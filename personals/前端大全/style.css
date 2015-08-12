@@ -1,0 +1,23 @@
+html {
+  background: url(image/html.png);
+  margin: 0;
+  padding: 0 1em 1em;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font: 16px helvetica, arial, freesans, clean, sans-serif;
+  line-height: 1.4em;
+  color: #333333;
+  border: none;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 900px;
+  text-align: left;
+  color: black;
+}
+
+p {
+  margin: 1em 0;
+  line-height: 1.5em;
+}
