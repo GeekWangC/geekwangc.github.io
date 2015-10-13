@@ -21,9 +21,16 @@
   #step{
       margin-left: 100px;
   }
+  #file{
+      position: relative;
+      top: 1em;
+  }
   </style>
 </head>
 <body>
+  <ul class="menu">
+    <li class="home"><a href="http://geekwangc.github.io"><h2>Home</h2></a></li>
+  </ul>
   <div id="title">
     <h2>拼图游戏</h2>
   </div>
@@ -34,7 +41,9 @@
       <label>困难</label>
       <input type="text" id='step' readonly="readonly" value="0"><label>步数</label>
     </form>
-      <input type="file" id="file" onchange="selectFile()" accept="image/*"/>
+    <div style="height:45px;">
+      <input type="file" id="file" onchange="selectFile()" accept="image/*" />
+    </div>
     <br>
   </div>
   <div id="main" class="main">
