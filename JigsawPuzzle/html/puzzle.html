@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>拼图</title>
+  <meta charset = "utf-8" />
+  <meta name ="author" content="geekwangc" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <link rel="shortcut icon" type="image/x-icon" href="../icon/geek.ico">
+  <link>
+  <style>
+  .picture {
+    border: 1px solid black;
+  }
+  #main{
+      float:left;
+  }
+  #yuantu{
+      float:left;
+      margin-left: 20px;
+  }
+  #step{
+      margin-left: 100px;
+  }
+  </style>
+</head>
+<body>
+  <div id="title">
+    <h2>拼图游戏</h2>
+  </div>
+  <div id="slider">
+    <form>
+      <label>简单</label>
+      <input type="range" id="level" value="4" min="3" max="5" step="1">
+      <label>困难</label>
+      <input type="text" id='step' readonly="readonly" value="0"><label>步数</label>
+    </form>
+      <input type="file" id="file" onchange="selectFile()" accept="image/*"/>
+    <br>
+  </div>
+  <div id="main" class="main">
+    <canvas id="pintu" width="480px" height="480px"></canvas>
+  </div>
+  <!-- <div id="yuantu" width="480px" height="480px"><img src="../image/1.jpg" /></div> -->
+  <script src="../js/puzzle.js"></script>
+</body>
+</html>
