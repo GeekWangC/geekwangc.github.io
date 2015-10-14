@@ -1,4 +1,13 @@
-
+var common = {
+  //设备
+  zWin : window,
+  //设备宽度
+  winWidth : window.innerWidth
+}
+//获取图版
+var canvas = document.getElementById('pintu');
+canvas.width = common.winWidth;
+canvas.height = common.winWidth;
 
 //获取画图区域
 var context = document.getElementById('pintu').getContext('2d');
@@ -6,7 +15,8 @@ var context = document.getElementById('pintu').getContext('2d');
 var img = new Image();
 
 //取得图像大小和分成的块数
-var boardSize = document.getElementById('pintu').width;
+//var boardSize = document.getElementById('pintu').width;
+var boardSize = common.winWidth;
 var tileCount = document.getElementById('level').value;
 
 var tileSize = boardSize / tileCount;
@@ -30,8 +40,6 @@ var boardParts = new Object;
 init("");
 //初始化面板
 function init(src){
-
-
 
   if(src){
     img.src = src;
