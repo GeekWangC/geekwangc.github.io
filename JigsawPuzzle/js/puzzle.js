@@ -55,6 +55,8 @@ function init(src){
 
 //更改难度相关方法，更改后重新计算大小
 document.getElementById('level').onchange = function() {
+  step = 0;
+  document.getElementById('step').value = 0;
   tileCount = this.value;
   tileSize = boardSize / tileCount;
   setBoard();
