@@ -3,10 +3,53 @@
 <head>
 	<title>列表</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="email=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<script type="text/javascript" src="List.js"></script>
 	<script type="text/javascript" src="testList.js"></script>
 </head>
 <body>
+	<input id="file-input" type="file" multiple />
+	<div id="dropbox" style="width: 200px;height: 200px;background:#e5e5e5;"></div>
+	<script type="text/javascript">
+		var inputElement = document.getElementById("file-input");
+		inputElement.addEventListener("change", handleFiles, false);
+		function handleFiles() {
+			var fileList = this.files; 
+		}
 
+		var dropbox;
+		dropbox = document.getElementById("dropbox");
+		dropbox.addEventListener("dragenter", dragenter, false);
+		dropbox.addEventListener("dragover", dragover, false);
+		dropbox.addEventListener("drop", drop, false);
+		function dragenter(e) {
+			e.stopPropagation();
+			e.preventDefault();
+		}
+
+		function dragover(e) {
+			e.stopPropagation();
+			e.preventDefault();
+		}
+
+		function drop(e) {
+			e.stopPropagation();
+			e.preventDefault();
+
+			var dt = e.dataTransfer;
+			var files = dt.files;
+
+			handleFiles(files);
+		}
+
+		var reader = new FileReader();
+		reader.onload = function(e) { 
+		    document.getElementById("image").src = e.target.result; 
+		}
+	</script>
 </body>
 </html>

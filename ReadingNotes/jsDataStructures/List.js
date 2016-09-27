@@ -1,3 +1,7 @@
+/**
+ * @anthor geekwangc
+ * @description 队列类	
+ */
 function List() {//构造函数
 	this.listSize = 0;
 	this.pos = 0;

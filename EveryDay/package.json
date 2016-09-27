@@ -1,0 +1,17 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "This is for study gulp project !",
+  "homepage": "",
+  "author": {
+    "name": "geekwangc",
+    "email": "geekwangc@163.com"
+  },
+  "repository": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.1.0",
+    "gulp-watch": "^4.3.10",
+    "require-dir": "^0.3.0"
+  }
+}
