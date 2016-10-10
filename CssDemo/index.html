@@ -15,15 +15,27 @@
 	.btn_box{width:66%; margin:1em auto 3em;}
 
 	.left-nav{float: left;}
+
+	.demo-a{display: none;}
+
+	.demo-b{display: none;}
+	.demo-b .box {padding: 20px;background-color: #f0f0f0;	}
+	.demo-b input {position: absolute; top: 234px;width: 160px; height: 32px;font-size: 100%;}
+
+	.demo-c{display: block;}
+	.demo-c .box {padding: 10px;background-color: #f0f0f0;}
+	.demo-c input {position: absolute; top: 234px;	width: 160px; height: 32px;font-size: 100%;}
 	</style>
 </head>
 <body>
 	<div class="left-nav">
 		<ul>
-			<li>absolute与等高布局</li>
+			<li class="a">absolute与等高布局</li>
+			<li class="b">absolute的破坏性</li>
+			<li class="c">absolute的包裹性</li>
 		</ul>
 	</div>
-	<div class="demo">
+	<div class="demo-a">
 		<div class="out_box">
 		    <div class="left_box">
 		        <div class="equal_height left_box_bg"></div>
@@ -42,6 +54,18 @@
 		    <button id="btnRightSide">右侧栏高度增加</button>
 		</div>
 	</div>
+	<div class="demo-b">
+		<div class="box">
+			<img id="demo-b-image" src="http://img.mukewang.com/54447b06000171a002560191.jpg" width="256" height="191">
+		</div>
+		<input id="demo-b-button" type="button" value="图片absolute化">
+	</div>
+	<div class="demo-c">
+		<div id="demo-c-box" class="box">
+			<img src="http://img.mukewang.com/54447b06000171a002560191.jpg" width="256" height="191">
+		</div>
+		<input id="demo-c-button" type="button" value="容器absolute化">
+	</div>
 	<script type="text/javascript">
 		function addImgLeft(){
 			var img = document.createElement("img");
@@ -57,6 +81,38 @@
 
 		document.getElementById('btnLeftSide').addEventListener("click", addImgLeft);
 		document.getElementById('btnRightSide').addEventListener("click", addImgRight);
+
+		var eleImg = document.getElementById("demo-b-image"), 
+			eleBtn = document.getElementById("demo-b-button");
+		if (eleImg != null && eleBtn != null) {
+			eleBtn.onclick = function() {
+				if (this.absolute) {
+					eleImg.style.position = "";
+					this.value = "图片absolute化";
+					this.absolute = false;
+				} else {
+					eleImg.style.position = "absolute";
+					this.value = "图片去absolute";
+					this.absolute = true;
+				}
+			};
+		}
+
+		var eleBox = document.getElementById("demo-c-box"), 
+			elecBtn = document.getElementById("demo-c-button");
+		if (eleBox != null && elecBtn != null) {
+			elecBtn.onclick = function() {
+				if (this.absolute) {
+					eleBox.style.position = "";
+					this.value = "容器absolute化";
+					this.absolute = false;
+				} else {
+					eleBox.style.position = "absolute";
+					this.value = "容器去absolute";
+					this.absolute = true;
+				}
+			};
+		}
 	</script>
 </body>
 </html>
