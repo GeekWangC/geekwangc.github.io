@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+	html{background: #e5e5e5;}
+	footer{position: absolute;bottom: 2rem;display: inline-block;height: 2rem;padding: 5%;}
+    .contain{position:absolute;width:300px;height:600px;overflow:hidden;border-radius:5px}
+    .title-tip{position:absolute;opacity:.5}
+    .title-tip li{display:inline-block;width:200px;height:20px;margin:0 45px;float:left;text-align:center;color:#fff;border-radius:10px;background:#000}
+    .photos img{float:left;width:300px;height:500px}
+    .photos {  position: absolute;z-index:9;  width: calc(300px * 4);}     
+    .play{ animation: dongqilai 10s ease-out infinite alternate;}
+    @keyframes dongqilai {
+        0%,25% {        margin-left: 0px;       }
+        30%,50% {       margin-left: -300px;    }
+        55%,75% {       margin-left: -600px;    }
+        80%,100% {       margin-left: -900px;    }
+    }
+	</style>
+</head>
+<body>
+	<header>轮播图DEMO</header>
+	<div class="contain">
+		<div class="photos play">
+			<img src="http://geekwangc.com/source/image/everyDay/20161001.jpg">
+			<img src="http://geekwangc.com/source/image/everyDay/20161008.jpg">
+			<img src="http://geekwangc.com/source/image/everyDay/20161009.jpg">
+			<img src="http://geekwangc.com/source/image/everyDay/20161010.jpg">
+			<ul class="title-tip">
+				<li>小伙子</li>
+				<li>小丫头</li>
+				<li>小妃子</li>
+				<li>小猴子</li>
+			</ul>
+		</div>
+	</div>
+	<footer>
+		<a href="http://geekwangc.com">geekwangc.com</a>
+	</footer>
+</body>
+</html>
