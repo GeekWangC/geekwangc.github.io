@@ -1,0 +1,81 @@
+div{margin: 1px;float: left;}
+#square{
+	width: 100px;height: 100px;background: #e5e5e5;
+}
+#rectangle{
+	width: 200px;height: 100px;background: #e5e5e5;
+}
+#circle{
+    width: 100px;height: 100px;background: #e5e5e5;
+    -moz-border-radius: 50%;   
+    -webkit-border-radius: 50%;    
+    border-radius: 50%;
+}
+#ellipse{
+    width: 200px;height: 100px;background: #e5e5e5;
+    -moz-border-radius: 50%;   
+    -webkit-border-radius: 50%;    
+    border-radius: 50%;
+}
+#triangle-up{
+    width: 0;height: 0;border-left: 50px solid transparent;
+    border-right: 50px solid transparent;    
+    border-bottom: 100px solid #e5e5e5;
+}
+#triangle-left{
+    width: 0;height: 0;border-left: 100px solid #e5e5e5;
+    border-top:50px solid transparent;    
+    border-bottom: 50px solid transparent;
+}
+#triangle-right{
+    width: 0;height: 0;border-right: 100px solid #e5e5e5;
+    border-top:50px solid transparent;    
+    border-bottom: 50px solid transparent;
+}
+#triangle-down{
+    width: 0;height: 0;border-left: 50px solid transparent;
+    border-right: 50px solid transparent;    
+    border-top: 100px solid #e5e5e5;
+}
+#curvedarrow{
+	position: relative;width: 0;height: 0;
+	border-top: 90px solid transparent;
+	border-right: 90px solid #e5e5e5;
+	-webkit-transform: rotate(10deg);
+	-moz-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+	-o-transform: rotate(10deg);
+}
+#curvedarrow:after{
+	content: "";position: absolute;
+	border: 0 solid transparent; 
+	border-top: 20px solid #e5e5e5;
+    border-radius: 50px 0 0 0;
+    top: -80px;
+    left: -20px;
+    width: 50px;
+    height: 60px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+}
+#space-invader{  
+	clear: both;
+	box-shadow:    
+	0 0 0 1em #e5e5e5,	0 1em 0 1em #e5e5e5,
+    -2.5em 1.5em 0 .5em #e5e5e5,	2.5em 1.5em 0 .5em #e5e5e5,
+    -3em -3em 0 0 #e5e5e5,    3em -3em 0 0 #e5e5e5,
+    -2em -2em 0 0 #e5e5e5,    2em -2em 0 0 #e5e5e5,
+    -3em -1em 0 0 #e5e5e5,
+    -2em -1em 0 0 #e5e5e5,    2em -1em 0 0 #e5e5e5,    3em -1em 0 0 #e5e5e5,
+    -4em 0 0 0 #e5e5e5,
+    -3em 0 0 0 #e5e5e5,    3em 0 0 0 #e5e5e5,    4em 0 0 0 #e5e5e5,
+    -5em 1em 0 0 #e5e5e5,
+    -4em 1em 0 0 #e5e5e5,    4em 1em 0 0 #e5e5e5,    5em 1em 0 0 #e5e5e5,
+    -5em 2em 0 0 #e5e5e5,    5em 2em 0 0 #e5e5e5,
+    -5em 3em 0 0 #e5e5e5,
+    -3em 3em 0 0 #e5e5e5,    3em 3em 0 0 #e5e5e5,    5em 3em 0 0 #e5e5e5,
+    -2em 4em 0 0 #e5e5e5,
+    -1em 4em 0 0 #e5e5e5,    1em 4em 0 0 #e5e5e5,    2em 4em 0 0 #e5e5e5;    background: #e5e5e5;    width: 1em;    height: 1em;    overflow: hidden;    margin: 50px 0 70px 65px;
+}
